@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Health ChatBot</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Health ChatBot</h1>
+        <form>
+            <div class="form-group">
+                <label for="userInput">Hoş geldiniz! Bir şey sormak için yazmaya başlayın.</label>
+                <input type="text" class="form-control" id="userInput" name="user_input" placeholder="Soruyu yazınız...">
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-btn">Gönder Gelsin..</button>
+        </form>
+        <div id="response" class="mt-5"></div>
+        <div id="image"></div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#submit-btn').on('click', function(event) {
+                    event.preventDefault();
+                    var userInput = $('#userInput').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: '/chat',
+                        data: {user_input: userInput},
+                        success: function(response) {
+                            $('#response').html('<p>' + response.summary + '</p>');
+                            var imageUrl = response.image_url;
+                            var img = $('<img>').attr('srcset', imageUrl).attr('width', '512px').attr('height', '512px').attr('alt', 'Generated Image');
+                            $('#image').html(img);
+                        }
+                    });
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>
