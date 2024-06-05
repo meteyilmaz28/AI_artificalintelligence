@@ -10,7 +10,7 @@ app = Flask(__name__)
 chat_history = []
 
 def generate_image(text):
-    client = OpenAI(api_key='sk-proj-02m9GTJ7g75pua9vHHolT3BlbkFJBKypYIxN7nqkMlvRbyrh')
+    client = OpenAI(api_key='YOUR_API_KEY')
 
     response = client.images.generate(
         model="dall-e-3",
