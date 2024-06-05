@@ -10,21 +10,26 @@ This simple web application represents a healthcare ChatBot developed using Flas
 
 ## Usage
 
-1. Clone the repository:
+1.   Clone the repository:
    
-   git clone https://github.com/yourusername/HealtyChatBot.git
-   cd HealtyChatBot
-Install the required dependencies:
+      git clone https://github.com/meteyilmaz28/HealtyChatBot.git
+      cd HealtyChatBot
 
-pip install -r requirements.txt
-Set up your OpenAI API key in the environment variables:
+2.   Install the required dependencies:
+
+      pip install -r requirements.txt
+
+3.   Set up your OpenAI API key in the environment variables:
+
+      export OPENAI_API_KEY='your_openai_api_key'
+
+4.   Run the application by executing the app.py file:
+
+      python app.py
+
+5.   Navigate to http://localhost:5000 in your web browser.
 
 
-export OPENAI_API_KEY='your_openai_api_key'
-Run the application by executing the app.py file:
+Acknowledgements
 
-
-python app.py
-Navigate to http://localhost:5000 in your web browser.
-
-@https://github.com/BahriDogru teşekkürler
+I would like to express my gratitude to [Bahri DOĞRU](https://github.com/BahriDogru) for their contributions to this project!
